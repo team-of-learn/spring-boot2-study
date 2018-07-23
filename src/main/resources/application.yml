@@ -9,6 +9,10 @@ info:
     artifact: ${project.artifactId}
     name: ${project.name}
     description: ${project.description}
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
 
 spring:
 #  h2:
@@ -24,6 +28,9 @@ spring:
 #    password:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
+    
+    
+    
     url: jdbc:mysql://127.0.0.1:3306/test1?&useSSL=true&characterEncoding=utf8
     username: root
     password: root

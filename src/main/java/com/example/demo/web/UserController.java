@@ -8,8 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -31,5 +34,17 @@ public class UserController {
         List<User> userList = userRepository.findAll();
         model.addAttribute("userList", userList);
         return "/user/list";
+    }
+    
+    @GetMapping(value = "/addlist")
+    public String addlist() {
+    	return "/user/addlist";
+    }
+    
+    @PostMapping(value = "/adduser")
+    public String addlist(User user) {
+    	user.setCreateTime(new Date());
+    	userRepository.save(user);
+    	return "/user/success";
     }
 }
