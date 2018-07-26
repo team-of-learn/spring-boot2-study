@@ -1,5 +1,2 @@
-<<<<<<< HEAD
 # develop
-=======
-pxfwork
->>>>>>> pxfwork
+

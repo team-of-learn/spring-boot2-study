@@ -1,4 +1,4 @@
-#mvn spring-boot:run
+
 project:
   artifactId: spring-io
   name: spring-io
