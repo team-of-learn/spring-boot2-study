@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html xmlns:th="http://www.thymeleaf.org">  
 <head>
     <meta charset="UTF-8" />
     <title th:text="${title}">标题</title>
@@ -8,15 +7,19 @@
 <body>
 <table>
     <tr>
-        <th>姓名</th>
-        <th>工号</th>
+        <td>序号</td>
+        <td>姓名</td>
+        <td>工号</td>
+        <td>操作</td>
     </tr>
     <tr th:each="user : ${userList}">
+        <td th:text="${user.id}">id</td>
         <td th:text="${user.name}">name</td>
         <td th:text="${user.jobNumber}">jobNumber</td>
+        <!-- <td><a href="/demo/delete/">删除</a></td> -->
+        <td><a th:href="${'/demo/delete/'+user.id}">删除</a></td>       
     </tr>
 </table>
-
 <select>
     <option th:each="user : ${userList}" th:value="${user.name}" th:text="${user.name}">---</option>
 </select>

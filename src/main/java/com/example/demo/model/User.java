@@ -19,4 +19,5 @@ public class User implements Serializable {
     @NonNull private  String jobNumber; //工号
     @NonNull
     private Date createTime; //创建时间
+    
 }
