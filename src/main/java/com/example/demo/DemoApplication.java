@@ -19,9 +19,11 @@ public class DemoApplication extends SpringBootServletInitializer {
 		return application.sources(DemoApplication.class);
 	}
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
+	
 	
 	@Bean
 	InitializingBean initData(UserRepository repo){
