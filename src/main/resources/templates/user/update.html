@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<title th:text="${title2}">标题</title>
+</head>
+
+<body>
+
+	<form th:action="@{/save}" th:object="${user}" method="get">
+
+		<input type="hidden" name="id" th:value="${user.id}" /> 
+		姓 名:<input type="text" name="name" th:field="*{name}" />  
+		工 号:<input type="text" name="jobNumber" th:field="*{jobNumber}" /> 
+			 <input type="submit" value="提交" />
+			 
+	</form>
+
+</body>
+</html>
