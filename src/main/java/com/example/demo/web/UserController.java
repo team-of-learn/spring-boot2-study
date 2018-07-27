@@ -52,7 +52,7 @@ public class UserController {
     	user.setCreateTime(new Date());
     	userRepository.save(user);
     	return "/user/success";
-
+    }
     @GetMapping(value = "/delete/{id}")
     public String  userdelete(@PathVariable("id") Long id,Model model){
         userRepository.deleteById(id);

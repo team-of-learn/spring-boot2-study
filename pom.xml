@@ -61,14 +61,6 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-			<!-- 移除嵌入式tomcat插件 -->
-			<exclusions>
-			        <exclusion>
-			                <groupId>org.springframework.boot</groupId>
-			                <artifactId>spring-boot-starter-tomcat</artifactId>
-			        </exclusion>
-			</exclusions>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			 <artifactId>spring-boot-starter-tomcat</artifactId>
@@ -106,13 +98,11 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 		</dependency>
-			<scope>runtime</scope>
-		</dependency>
 		
 	<dependency>
     <groupId>org.apache.tomcat</groupId>
     <artifactId>tomcat-servlet-api</artifactId>
-    <version>8.5.31</version>
+    <version>8.0.41</version>
     <scope>provided</scope>
   </dependency>
     </dependencies>
@@ -123,11 +113,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.0.0</version>  
-            </plugin>   
+			</plugin>  
 		</plugins>
 	</build>
 

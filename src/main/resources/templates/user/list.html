@@ -17,29 +17,13 @@
         <td th:text="${user.name}">name</td>
         <td th:text="${user.jobNumber}">jobNumber</td>
         <td><a th:href="${'/demo/update/'+user.id}">修改</a></td>
-        <td><input type="button" value="删除" name="sc"/>
+        <td><a th:href="${'/demo/delete/'+user.id}">删除</a></td>
     </tr>
 </table>
 
 <select>
     <option th:each="user : ${userList}" th:value="${user.name}" th:text="${user.name}">---</option>
 </select>
-<a href="/demo/user/addlist">adduser</a>
-        <td>序号</td>
-        <td>姓名</td>
-        <td>工号</td>
-        <td>操作</td>
-    </tr>
-    <tr th:each="user : ${userList}">
-        <td th:text="${user.id}">id</td>
-        <td th:text="${user.name}">name</td>
-        <td th:text="${user.jobNumber}">jobNumber</td>
-        <!-- <td><a href="/demo/delete/">删除</a></td> -->
-        <td><a th:href="${'/demo/delete/'+user.id}">删除</a></td>       
-    </tr>
-</table>
-<select>
-    <option th:each="user : ${userList}" th:value="${user.name}" th:text="${user.name}">---</option>
-</select>
+
 </body>
 </html>
