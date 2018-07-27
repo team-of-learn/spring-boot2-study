@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html xmlns:th="http://www.thymeleaf.org">  
 <head>
     <meta charset="UTF-8" />
     <title th:text="${title1}">标题</title>
 </head>
-
 <script type="text/javascript">
-
-
 </script>
 <body>
 <table>
@@ -21,7 +17,7 @@
         <td th:text="${user.name}">name</td>
         <td th:text="${user.jobNumber}">jobNumber</td>
         <td><a th:href="${'/demo/update/'+user.id}">修改</a></td>
-        <td><input type="button" value="删除" name="sc"/>
+        <td><a th:href="${'/demo/delete/'+user.id}">删除</a></td>
     </tr>
 </table>
 

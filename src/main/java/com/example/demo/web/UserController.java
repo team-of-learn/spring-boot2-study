@@ -14,19 +14,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.Date;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import java.util.List;
-
 import java.util.Optional;
 
 
 @Controller
 //@RequestMapping(value="/user")
-
 @Slf4j
 public class UserController {
-
       @ModelAttribute
       public void populateModel(Model model) {
 
@@ -37,10 +34,7 @@ public class UserController {
 
     @Autowired
     private UserRepository userRepository;
-
-
     @GetMapping(value="/list")
-
     public String list(Model model) throws Exception {
         List<User> userList = userRepository.findAll();
         model.addAttribute("userList", userList);
@@ -58,6 +52,13 @@ public class UserController {
     	user.setCreateTime(new Date());
     	userRepository.save(user);
     	return "/user/success";
+    }
+    @GetMapping(value = "/delete/{id}")
+    public String  userdelete(@PathVariable("id") Long id,Model model){
+        userRepository.deleteById(id);
+        List<User> userList = userRepository.findAll();
+        model.addAttribute("userList", userList);
+        return "/user/list";
     }
 
     
